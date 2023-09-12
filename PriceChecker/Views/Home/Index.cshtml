@@ -1,0 +1,96 @@
+﻿@model IndexVm
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<br />
+<h1 class="text-center"> Welcome to PriceChecker </h1>
+<br />
+@*
+<div id="test1">
+    <table id="product-table" class="table table-responsive-sm" style="color:blue">
+        <thead>
+            <tr>
+                <td>HISTORY ID</td>
+                <td>PRICE (₦)</td>
+                <td>DATE ADDED</td>
+                <td>PRODUCT ID</td>
+                <td>PRODUCT</td>               
+            </tr>
+        </thead>
+
+        <tbody id="table_body" class="text-dark">
+        </tbody>
+    </table>
+</div>*@
+
+
+<div class="row bg-dark">
+
+
+    <div class="col row">
+        <div class="col-8"><canvas id="myChart"></canvas></div>
+
+        <div class="col-4"><canvas id="myPieChart"></canvas></div>
+
+    </div>
+    <br />
+
+    <div class="w-100">
+        <hr class="bg-secondary" />
+    </div>
+
+
+    <div class="col offset-1 bg-dark">
+
+        <div class="row">
+
+            <div class="col">
+                <select class="btn-sm" asp-for="CategoryName" id="SelectedCategory"
+                        asp-items="@Model.SelectCategories">
+                    <option value="0">Select Category</option>
+                </select>
+
+                <label id="label">@Model.CategoryName </label>
+            </div>
+            
+            
+            <div class="col">
+                <select class="btn-sm" asp-for="ProductName" id="SelectedProduct"
+                        asp-items="@Model.SelectProducts">
+                    <option value="0">Select Product</option>
+                </select>
+
+               <label id="label">@Model.ProductName </label>
+            </div>           
+
+        </div>
+        <br />
+
+    </div>
+
+
+    <table id="product-table" class="table table-responsive-sm" style="color:blue">
+        <thead>
+            <tr>
+                <td>HISTORY ID</td>
+                <td>PRICE (₦)</td>
+                <td>DATE ADDED</td>
+                <td>PRODUCT ID</td>
+                <td>PRODUCT</td>
+            </tr>
+        </thead>
+
+        <tbody id="table_body" class="text-dark">
+        </tbody>
+    </table>
+
+</div>
+
+
+@section Scripts {
+    <script src="~/Charts.js">     
+    
+    </script>        
+
+    }
